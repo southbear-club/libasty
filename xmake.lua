@@ -1,0 +1,11 @@
+target("asty")
+    set_kind("shared")
+    add_files("src/log/*.cpp")
+
+target("ut")
+    set_kind("binary")
+    add_deps("asty")
+    add_syslinks("gtest")
+    add_syslinks("pthread")
+    add_includedirs("src")
+    add_files("unittest/*.cpp")
